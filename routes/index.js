@@ -19,10 +19,10 @@ router.get('/*', (request, response) => {
 router.post('/user-form', (request, response) => {
     console.log(request.url)
     var body = request.body
-    console.log("reqq body", body);
+   
     //validating phoneNumber (can be extended for other input variables)
     var { isValid, errors } = formInputValidate(body)
-    console.log("get output if isvalid n errors", isValid, errors);
+    
 
     if (isValid) {
         // if validation is success, check if user already exists
