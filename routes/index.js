@@ -49,8 +49,11 @@ router.post('/user-form', (request, response) => {
         response.status(200).json({ message: errors.phoneNumber })
     } else if (errors.name != null) {
         response.status(200).json({ message: errors.name })
-    }
-     else {
+    } else if (errors.dob != null) {
+        response.status(200).json({ message: errors.dob })
+    } else if (errors.email != null) {
+        response.status(200).json({ message: errors.email })
+    } else {
         response.status(200).json({ message: 'Something Went Wrong !!!' })
     }
 })
