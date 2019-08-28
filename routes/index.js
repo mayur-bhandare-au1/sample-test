@@ -46,8 +46,11 @@ router.post('/user-form', (request, response) => {
             }
         })
     } else if (errors.phoneNumber != null) {
-        response.status(200).json({ message: 'Invalid Phone Number' })
-    } else {
+        response.status(200).json({ message: errors.phoneNumber })
+    } else if (errors.name != null) {
+        response.status(200).json({ message: errors.name })
+    }
+     else {
         response.status(200).json({ message: 'Something Went Wrong !!!' })
     }
 })
